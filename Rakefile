@@ -36,13 +36,13 @@ end
 
 ############# tasks for jasmine #############
 
-require 'jasmine-headless-webkit'
+# require 'jasmine-headless-webkit'
 
-Jasmine::Headless::Task.new('jasmine:headless') do |t|
-  t.colors = true
-  t.keep_on_error = true
-  t.jasmine_config = 'www/spec/support/jasmine.yml'
-end
+# Jasmine::Headless::Task.new('jasmine:headless') do |t|
+#   t.colors = true
+#   t.keep_on_error = true
+#   t.jasmine_config = 'www/spec/support/jasmine.yml'
+# end
 
 ############# tasks for compiling #############
 
@@ -106,5 +106,5 @@ end
 
 task :compile_all => ['haml:compile', 'coffee:compile', 'scss:compile']
 
-task :default => ['compile_all', 'jasmine:headless']
+task :default => ['compile_all']
 
