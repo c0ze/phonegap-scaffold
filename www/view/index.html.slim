@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type"
+    meta content="telephone=no" name="format-detection"
+    meta content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" name="viewport"
+    link href="css/compiled/login.css" rel="stylesheet" type="text/css"
+    link href="css/compiled/retina.css" media=("only screen and (-webkit-min-device-pixel-ratio: 2)") rel="stylesheet" type="text/css"
+    title PhoneGap Scaffold Hello from Slim !
+  body
+    #login
+      form.login
+        .error
+        input#auth_key.field.deletable name="auth_key" placeholder="Email" type="email"
+        input#password.field.deletable name="password" placeholder="Password" type="password"
+        input.submit.clear-fix type="submit" value="Login"
+    script src="cordova-2.5.0.js" type="text/javascript"
+    script src="js/vendor/zepto.js" type="text/javascript"
+    script src="js/vendor/underscore-min.js" type="text/javascript"
+    script src="js/vendor/backbone.js" type="text/javascript"
+    script src="js/vendor/modernizr-touch.js" type="text/javascript"
+    script src="js/vendor/pointer.js" type="text/javascript"
+    script src="js/compiled/app.js" type="text/javascript"
+    script src="js/compiled/index.js" type="text/javascript"
+    javascript:
+      | app.initialize();

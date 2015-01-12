@@ -104,7 +104,25 @@ namespace :haml do
   end
 end
 
-task :compile_all => ['haml:compile', 'coffee:compile', 'scss:compile']
+require 'slim'
+
+namespace :slim do
+
+  desc 'Compile source slim files'
+  task :compile do
+    src_dir = File.expand_path('../www/view', __FILE__)
+    compiled_dir = File.expand_path('../www/', __FILE__)
+    files = Dir.glob(File.join(src_dir, '*.slim'))
+    files.each do |file|
+      compiled_html = `slimrb #{file}`
+      output_html = "#{compiled_dir}/#{File.basename file, '.*'}"
+      File.open(output_html, 'w+') { |f| f.write(compiled_html) }
+      puts "#{output_html} created"
+    end
+  end
+end
+
+task :compile_all => ['slim:compile', 'coffee:compile', 'scss:compile']
 
 task :default => ['compile_all']
 
